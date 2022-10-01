@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salary_calculator/table.dart';
 
 class MySalaryPage extends StatefulWidget {
   @override
@@ -148,6 +149,28 @@ class _MySalaryPageState extends State<MySalaryPage> {
                   "Employee $str's Net Salary is $d Rs",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Spacer(),
+                    Column(
+                      children: [
+                        FloatingActionButton(
+                            child: Icon(Icons.navigate_next),
+                            backgroundColor: Colors.black,
+                            onPressed: (() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MyTable(),
+                                  ));
+                            })),
+                      ],
+                    ),
+                  ],
                 )
               ],
             ))))));
